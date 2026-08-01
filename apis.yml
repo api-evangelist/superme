@@ -1,8 +1,33 @@
 aid: superme
 name: SuperMe
-description: 'SuperMe is a company surfaced as a portfolio company of forerunner-ventures, greylock and
-  added to the API Evangelist network as a stub for enrichment. Sector: ai. This profile is a lead awaiting
-  the enrichment pipeline.'
+x-enrichment:
+  date: '2026-07-21'
+  status: enriched
+  artifacts_added: 8
+  pass: local-v1
+description: >-
+  SuperMe is a professional network for the AI age that connects people with expert
+  knowledge from real professionals instead of generic answers. It offers Work Groups
+  (curated panels of founders and executives with AI profiles trained on their actual
+  work), My Agent (a personal AI assistant that finds relevant experts and synthesizes
+  their perspectives), and Group Chat (real-time discussions across multiple AI profiles
+  on a topic). SuperMe publishes an official, OAuth-protected hosted MCP server so its
+  network can be used directly from Claude, ChatGPT, and Cursor, with incognito mode and
+  per-item sharing controls (public, private, team-only, or auto-indexed). Backed by
+  Forerunner Ventures and Greylock.
+accessModel:
+  pricing: unknown
+  onboarding: self-serve
+  trial: false
+  try_now: false
+  public: false
+  label: Self-serve signup
+  confidence: medium
+  source:
+  - authentication
+  generated: '2026-07-22'
+  method: derived
+image: https://superme.ai/favicon.ico
 url: https://raw.githubusercontent.com/api-evangelist/superme/refs/heads/main/apis.yml
 x-type: company
 x-source: vc-portfolio
@@ -13,16 +38,55 @@ x-tier: stub
 x-tier-reason: portfolio-lead
 specificationVersion: '0.20'
 created: '2026-07-17'
-modified: '2026-07-17'
+modified: '2026-07-21'
 tags:
 - Company
-- Ai
-apis: []
+- Artificial Intelligence
+- AI Agents
+- Professional Network
+- Expert Knowledge
+- Model Context Protocol
+- MCP
+apis:
+- name: SuperMe MCP Server
+  description: >-
+    Official hosted, OAuth-protected Model Context Protocol server that exposes the SuperMe
+    professional network to AI clients (Claude, ChatGPT, Cursor) over SSE / Streamable HTTP.
+  humanURL: https://superme.ai/mcp
+  baseURL: https://mcp.superme.ai
+  tags:
+  - MCP
+  - AI Agents
+  properties:
+  - type: MCPServer
+    url: mcp/superme-mcp.yml
+  - type: Authentication
+    url: authentication/superme-authentication.yml
 maintainers:
 - FN: Kin Lane
   email: kin@apievangelist.com
 - FN: APIs.json
   email: info@apis.io
 common:
+- type: MCPServer
+  url: mcp/superme-mcp.yml
+- type: Authentication
+  url: authentication/superme-authentication.yml
+- type: WellKnown
+  url: well-known/superme-well-known.yml
+- type: LLMsTxt
+  url: llms/superme-llms.txt
+- type: DomainSecurity
+  url: security/superme-domain-security.yml
 - type: Website
   url: https://superme.ai
+- type: SignUp
+  url: https://superme.ai/register
+- type: Login
+  url: https://superme.ai/login
+- type: TermsOfService
+  url: https://superme.ai/terms
+- type: PrivacyPolicy
+  url: https://superme.ai/privacy
+- type: Support
+  url: mailto:contact@superme.ai

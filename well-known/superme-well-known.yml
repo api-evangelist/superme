@@ -1,0 +1,33 @@
+generated: '2026-07-21'
+method: searched
+source: live probes of superme.ai / api.superme.ai / mcp.superme.ai
+notes: >-
+  superme.ai is a Next.js SPA that soft-200s all paths; its /.well-known/* HTML
+  responses are NOT real documents. The genuine discovery documents live on the
+  API + MCP hosts and are captured below (verified application/json).
+hosts:
+- host: https://mcp.superme.ai
+  documents:
+  - path: /.well-known/oauth-authorization-server   # RFC 8414
+    status: 200
+    file: superme-oauth-authorization-server.json
+  - path: /.well-known/oauth-protected-resource      # RFC 9728
+    status: 200
+    file: superme-oauth-protected-resource.json
+  - path: /.well-known/openid-configuration           # OIDC discovery
+    status: 404
+- host: https://api.superme.ai
+  documents:
+  - path: /.well-known/openid-configuration           # OIDC discovery (served here)
+    status: 200
+    file: superme-openid-configuration.json
+  - path: /.well-known/oauth-authorization-server
+    status: 200
+  - path: /.well-known/security.txt
+    status: 404
+- host: https://superme.ai
+  documents:
+  - path: /.well-known/security.txt
+    status: 404   # HTML SPA shell, not a real security.txt
+  - path: /llms.txt
+    status: 404

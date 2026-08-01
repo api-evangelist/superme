@@ -1,0 +1,32 @@
+generated: '2026-07-21'
+method: searched
+status: published
+source: https://superme.ai/mcp
+server:
+  name: superme
+  transport: sse            # Streamable HTTP / SSE (content-type text/event-stream)
+  url: https://mcp.superme.ai/
+  alt_url: https://api.superme.ai/mcp
+auth:
+  type: oauth2
+  protected_resource_metadata: https://mcp.superme.ai/.well-known/oauth-protected-resource
+  authorization_server_metadata: https://mcp.superme.ai/.well-known/oauth-authorization-server
+  authorization_endpoint: https://mcp.superme.ai/authorize
+  token_endpoint: https://mcp.superme.ai/token
+  registration_endpoint: https://mcp.superme.ai/register   # RFC 7591 Dynamic Client Registration
+  grant_types: [authorization_code, refresh_token]
+  pkce: S256
+  bearer_methods: [header]
+  scopes_supported: []
+clients_supported:
+  - Claude
+  - ChatGPT
+  - Cursor
+notes: >-
+  Official hosted, OAuth-protected MCP server advertised by SuperMe ("works within
+  Claude, ChatGPT, Cursor without switching context"). The endpoint requires an
+  authenticated bearer token obtained via OAuth 2.1 authorization-code + PKCE with
+  dynamic client registration; the tool list is only enumerable after auth, so it
+  is not captured here (no unauthenticated tools/list). No public OpenAPI is
+  published (api.superme.ai auto-docs are disabled).
+tools: []   # not enumerable without OAuth; server is real and published
