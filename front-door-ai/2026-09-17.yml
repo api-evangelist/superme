@@ -1,0 +1,30 @@
+# Front Door AI Index — superme — 2026-09-17
+# AI vocabulary counted on the provider's root page. Generated; do not edit.
+# `score` is null unless ownership is `own` — see front_door_ai.py.
+front_door_ai:
+  slug: superme
+  lexicon_version: '1.0'
+  probed_at: '2026-09-17'
+  host: superme.ai
+  final_host: www.superme.ai
+  ownership: own
+  owner: superme
+  shares_host_with: null
+  inherited_from: null
+  verdict: scored
+  score: 12
+  host_score: 12
+  density: 18.84
+  words: 637
+  tiers:
+    agentic: 2
+    core: 6
+    model: 4
+  ambiguous: 1
+  top_terms:
+    AI: 5
+    ChatGPT: 2
+    Claude: 2
+    MCP: 2
+    LLMs: 1
+    agent: 1
